@@ -1,7 +1,9 @@
 package com.fvotlan.garden.controller;
 
+import com.fvotlan.garden.feign.CtsTestDbApi;
 import com.fvotlan.garden.feign.InteractiveApi;
 import lombok.AllArgsConstructor;
+import lombok.var;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,13 +19,16 @@ import java.util.HashMap;
 @AllArgsConstructor
 public class HelloController {
     private InteractiveApi interactiveApi;
+    private CtsTestDbApi ctsTestDbApi;
 
     @GetMapping("")
     public Object world(){
-        HashMap<String, Object> res = new HashMap<>();
-        res.put("code",200);
+        HashMap<String, Object> req = new HashMap<>();
+        req.put("code",200);
 
-        interactiveApi.interactive(res);
+        var res = interactiveApi.interactive(req);
+
+        var testRes = ctsTestDbApi.queryAll();
 
         return res;
     }
