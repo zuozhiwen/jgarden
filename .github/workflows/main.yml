@@ -32,7 +32,7 @@ jobs:
         run: cp Dockerfile target
 
       - name: Log into registry
-        run: docker login hub.aidong-ai.com --username zzw --password Aidong@2020
+        run: docker login hub.aidong-ai.com --username {{ AIDONG_HUB_USERNAME }} --password {{ AIDONG_HUB_PASSWORD }}
 
       - name: Build image
         run: |
