@@ -1,6 +1,7 @@
 package com.gardenia.jgarden.controller;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,7 @@ import java.util.HashMap;
  * @author zhiwen.zuo
  * @date 2019-05-27
  **/
+@Slf4j
 @RestController
 @RequestMapping("hello")
 @AllArgsConstructor
@@ -23,5 +25,11 @@ public class HelloController {
             put("msg", "success");
             put("now", System.currentTimeMillis());
         }};
+    }
+
+    @GetMapping("test2")
+    public Object test2() {
+        log.info("test2");
+        return "test2";
     }
 }
