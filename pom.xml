@@ -8,8 +8,8 @@
 		<version>2.3.7.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.fvotlan</groupId>
-	<artifactId>garden</artifactId>
+	<groupId>com.gardenia</groupId>
+	<artifactId>jgarden</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>garden</name>
 	<description>Demo project for Spring Boot</description>
@@ -54,6 +54,8 @@
 	</dependencyManagement>
 
 	<build>
+		<directory>${basedir}/target</directory>
+		<finalName>jgarden</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
