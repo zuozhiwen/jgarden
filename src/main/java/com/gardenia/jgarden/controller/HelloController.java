@@ -21,6 +21,7 @@ public class HelloController {
         return new HashMap<String, Object>() {{
             put("code", 0);
             put("msg", "success");
+            put("now", System.currentTimeMillis());
         }};
     }
 }
