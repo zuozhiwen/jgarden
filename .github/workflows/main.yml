@@ -8,7 +8,7 @@ on:
 
 env:
   # TODO: Change variable to your image's name.
-  IMAGE_NAME: JGarden
+  IMAGE_NAME: jgarden
 
 jobs:
   # Push image to GitHub Packages.
@@ -37,9 +37,9 @@ jobs:
       - name: Build image
         run: |
           pushd target
-          docker build -t hub.aidong-ai.com/aidong/JGarden:latest .
+          docker build -t hub.aidong-ai.com/aidong/jgarden:latest .
           popd
 
       - name: Push image
         run: |
-          docker push hub.aidong-ai.com/aidong/JGarden:latest
+          docker push hub.aidong-ai.com/aidong/jgarden:latest
