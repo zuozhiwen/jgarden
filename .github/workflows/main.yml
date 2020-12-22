@@ -44,6 +44,7 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v1
         with:
+          registry: hub.aidong-ai.com
           username: ${{ secrets.AIDONG_HUB_USERNAME }}
           password: ${{ secrets.AIDONG_HUB_PASSWORD }}
 
